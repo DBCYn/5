@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息登记表</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        legend {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+            text-align-last: justify;
+        }
+        
+        label {
+            display: inline-block;
+            width: 80px;
+            margin-right: 10px;
+            vertical-align: top;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            padding: 0.5em;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        
+        .radio-group {
+            display: inline-block;
+        }
+        
+        .radio-option {
+            margin-right: 15px;
+        }
+        
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 0.5em 1em;
+            margin: 0 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        input[type="reset"] {
+            background-color: #f44336;
+        }
+        
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <form action="localhost:6342/WebSto..." method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>信息登记</legend>
+            
+            <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="age">年龄</label>
+                <input type="number" id="age" name="age" min="0" max="120">
+            </div>
+            
+            <div class="form-group">
+                <label>性别</label>
+                <div class="radio-group">
+                    <span class="radio-option">
+                        <input type="radio" id="male" name="gender" value="男" checked>
+                        <label for="male" style="width: auto;">男</label>
+                    </span>
+                    <span class="radio-option">
+                        <input type="radio" id="female" name="gender" value="女">
+                        <label for="female" style="width: auto;">女</label>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">电话号码</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{11}">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">邮箱</label>
+                <input type="email" id="email" name="email">
+            </div>
+            
+            <div class="form-group">
+                <label for="birthdate">出生日期</label>
+                <input type="date" id="birthdate" name="birthdate">
+            </div>
+            
+            <div class="form-group">
+                <label for="education">学历</label>
+                <select id="education" name="education">
+                    <option value="本科">本科</option>
+                    <option value="大专">大专</option>
+                    <option value="硕士">硕士</option>
+                    <option value="博士">博士</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="idcard">身份证</label>
+                <input type="file" id="idcard" name="idcard">
+            </div>
+            
+            <div class="form-group">
+                <label for="notes">备注</label>
+                <textarea id="notes" name="notes"></textarea>
+            </div>
+            
+            <div class="buttons">
+                <input type="submit" value="提交表单">
+                <input type="reset" value="重新填写">
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
